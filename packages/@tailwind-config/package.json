@@ -1,8 +1,12 @@
 {
-    "name": "@tailwind-config",
+    "name": "@smarket-tailwind/config",
     "version": "0.0.0",
     "private": true,
     "license": "MIT",
-    "files" : ["tailwind.config.js"]
-  }
-  
+    "files": [
+        "tailwind.config.js"
+    ],
+    "dependencies": {
+        "@material-tailwind/react": "^2.0.1"
+    }
+}
