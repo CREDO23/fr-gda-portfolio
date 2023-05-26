@@ -13,7 +13,8 @@
     "@smarket/design": "workspace:*",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
     "@smarket-tailwind/config": "workspace:*",
