@@ -15,8 +15,7 @@ import { CiShop } from "react-icons/ci";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 
 export default function Example() {
-
-    const [rated, setRated] = useState(4);
+  const [rated, setRated] = useState(4);
 
   return (
     <Card className="w-80">
@@ -56,8 +55,8 @@ export default function Example() {
                   <p>rated</p>
                 </div>
               </PopoverHandler>
-                                                                                <PopoverContent>
-              <Rating value={4} onChange={(value) => setRated(value)} />
+              <PopoverContent>
+                <Rating value={4} onChange={(value) => setRated(value)} />
               </PopoverContent>
             </Popover>
           </div>
