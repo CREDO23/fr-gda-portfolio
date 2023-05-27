@@ -1,6 +1,7 @@
 import { Typography } from '@material-tailwind/react'
 import Button from '@smarket/design/button/index'
 import Input from '@smarket/design/input/index'
+import Card from '@smarket/design/productCard/Card'
 import {AiOutlineExclamationCircle} from 'react-icons/ai'
 
 
@@ -14,5 +15,6 @@ export default function Index () {
         Use at least 8 characters, one uppercase, one lowercase and one number.
       </Typography>
     </div>
+    <Card/>
   </div> 
 }
