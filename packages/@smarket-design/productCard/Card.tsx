@@ -3,8 +3,6 @@ import {
   CardHeader,
   CardBody,
   Typography,
-  Button,
-  CardFooter,
   Rating,
   Popover,
   PopoverContent,
@@ -48,11 +46,11 @@ export default function Example() {
               <CiShop className=" text-[#FF5722]" />
               <p className="text-sm font-ligth">Soes shop</p>
             </div>
-            <Popover>
+            <Popover >
               <PopoverHandler>
                 <div className="flex cursor-pointer items-center gap-1">
                   <MdOutlineFavoriteBorder className=" text-[#FF5722]" />
-                  <p>rated</p>
+                  <p className=" text-xs">{rated}</p>
                 </div>
               </PopoverHandler>
               <PopoverContent>
