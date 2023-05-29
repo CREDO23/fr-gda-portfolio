@@ -3,20 +3,15 @@ import {
   CardHeader,
   CardBody,
   Typography,
-  Button,
-  CardFooter,
   Rating,
   Popover,
   PopoverContent,
   PopoverHandler,
 } from "@material-tailwind/react";
-import { useState } from "react";
 import { CiShop } from "react-icons/ci";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 
 export default function Example() {
-  const [rated, setRated] = useState(4);
-
   return (
     <Card className="w-80">
       <CardHeader shadow={false} floated={false} className="h-60">
@@ -52,11 +47,10 @@ export default function Example() {
               <PopoverHandler>
                 <div className="flex cursor-pointer items-center gap-1">
                   <MdOutlineFavoriteBorder className=" text-[#FF5722]" />
-                  <p>rated</p>
                 </div>
               </PopoverHandler>
               <PopoverContent>
-                <Rating value={4} onChange={(value) => setRated(value)} />
+                <Rating value={4} />
               </PopoverContent>
             </Popover>
           </div>
