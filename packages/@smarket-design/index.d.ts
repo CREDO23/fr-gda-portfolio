@@ -1,50 +1,53 @@
 import { ReactNode, Ref } from "react";
 
-type Tcolor = | "white"
-| "blue-gray"
-| "gray"
-| "brown"
-| "deep-orange"
-| "orange"
-| "amber"
-| "yellow"
-| "lime"
-| "light-green"
-| "green"
-| "teal"
-| "cyan"
-| "light-blue"
-| "blue"
-| "indigo"
-| "deep-purple"
-| "purple"
-| "pink"
-| "red";
-
-export interface IButtonProps {
-  variant?: "filled" | "outlined" | "gradient" | "text";
-  size?: "sm" | "md" | "lg";
-  color?: Tcolor;
-  fullWidth?: boolean;
-  ripple?: boolean;
-  className?: className;
-  children: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+export interface BtnProps {
+  disabled?: boolean;
+  block?: boolean;
+  danger?: boolean;
+  htmlType?: "button" | "submit" | "reset";
+  icon?: ReactNode;
+  ghost?: boolean;
+  shape?: "circle" | "round" | "default";
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  loading?: boolean;
+  title: string;
+  type?: "primary" | "ghost" | "link" | "dashed" | "text" | "default";
+  size?: "large" | "small" | "middle";
 }
 
-
-export interface IInputProps {
-  variant ?: "standard" | "outlined" | "static"
-  size ?: "md" | "lg"
-  color ?: Tcolor
-  label ?: string
-  error ?: boolean
-  success ?: boolean
-  icon ?: ReactNode
-  labelProps ?: object
-  containerProps ?: object
-  className?: className;
-  shrink ?: boolean
-  inputRef ?: Ref
-  type? : HTMLInputTypeAttribute | undefined;
+export interface InputProps {
+  placeholder?: string;
+  label?: string;
+  value?: string;
+  onChange: (e: any) => void;
+  onPressEnter?: (e: any) => void;
+  addonAfter?: ReactNode;
+  addonBefore?: ReactNode;
+  allowClear?: boolean | { clearIcon?: ReactNode };
+  defaultValue?: string;
+  disabled?: boolean;
+  maxLength?: number;
+  showCount?: boolean;
+  status?: "error" | "warning";
+  prefix?: ReactNode;
+  suffix?: ReactNode;
+  size?: "large" | "middle" | "small";
+  type?: "search" | "password" | "text" | "textarea";
+  autoSize?: boolean | { minRows: number; maxRows: number };
+  onSearch?: (value: any, e: any) => void;
+  loading?: boolean;
+  showLabel?: boolean;
+  error?: string;
+  labelColor?: "primary" | "secondary";
+  required?: boolean;
+  inputMode?:
+    | "email"
+    | "tel"
+    | "text"
+    | "search"
+    | "none"
+    | "url"
+    | "numeric"
+    | "decimal"
+    | undefined;
 }
