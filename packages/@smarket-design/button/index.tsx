@@ -1,27 +1,50 @@
-import { Button as Btn } from "@material-tailwind/react/components/Button";
-import { IButtonProps } from "..";
+import { Button as Btn, ConfigProvider } from "antd";
+import { BtnProps } from "..";
 
-export default function Button({
-  variant = 'filled',
-  size = 'md',
-  color = 'deep-orange',
-  fullWidth = false,
-  ripple = true,
-  className,
-  children,
-  onClick,
-} : IButtonProps) {
+export default function Button(props: BtnProps): JSX.Element {
+  const {
+    disabled = false,
+    ghost = false,
+    title,
+    loading = false,
+    danger = false,
+    shape = "default",
+    htmlType,
+    size = "middle",
+    block = false,
+    type = "default",
+    icon,
+    onClick,
+  } = props;
+
   return (
-    <Btn
-      size={size}
-      onClick={onClick}
-      variant={variant}
-      color={color}
-      fullWidth={fullWidth}
-      ripple={ripple}
-      className={className}
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#ff5722",
+          colorError: "#FE4D4F",
+        },
+      }}
     >
-      {children}
-    </Btn>
+      <Btn
+        className="flex items-center justify-center "
+        style={
+          type === "primary" && !ghost ? { background: "#ff5722" } : undefined
+        }
+        type={type}
+        size={size}
+        block={block}
+        icon={icon}
+        onClick={onClick}
+        ghost={ghost}
+        disabled={disabled}
+        loading={loading}
+        danger={danger}
+        shape={shape}
+        htmlType={htmlType}
+      >
+        {title}
+      </Btn>
+    </ConfigProvider>
   );
 }
