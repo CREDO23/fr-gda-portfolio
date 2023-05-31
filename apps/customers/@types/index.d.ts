@@ -2,20 +2,18 @@ declare global {}
 
 interface IChoicesProps {
   colors?: {
-    label: "Colors";
-    default: string;
+    label: string;
     items: string[];
-  };
+  } | null;
 
-  size?: {
-    label: "Size";
-    default: string;
+  sizes?: {
+    label: string;
     items: string[];
-  };
+  } | null;
 
   others?: {
+    key: number;
     label: string;
-    default: string;
     items: any;
   }[];
 }

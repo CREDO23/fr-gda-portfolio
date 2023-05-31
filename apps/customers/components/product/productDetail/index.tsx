@@ -8,6 +8,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi";
 import BrandImages from "./Brandimages";
 import Choices from "./choices";
 import { Popover, Rate } from "antd";
+import { colors, size, others } from "../../../data/choices";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
@@ -80,7 +81,7 @@ export default function ProductDetail() {
             <Rate onChange={hide} disabled allowHalf value={3.5} />
           </div>
         </div>
-        <Choices />
+        <Choices colors={colors} sizes={size} others={others} />
         <div className="flex flex-col gap-2">
           <p>Quantity</p>
           <div className="flex rounded items-center w-[10.5rem]">
