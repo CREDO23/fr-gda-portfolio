@@ -2,6 +2,12 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "@material-tailwind/react";
 import { ConfigProvider } from "antd";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
       }}
     >
       <ThemeProvider>
-        <Component {...pageProps} />
+        <main className={poppins.className}>
+          <Component {...pageProps} />
+        </main>
       </ThemeProvider>
     </ConfigProvider>
   );

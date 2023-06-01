@@ -1,4 +1,3 @@
-import { Typography } from "@material-tailwind/react";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { FiShare2 } from "react-icons/fi";
 import { AiOutlineShop } from "react-icons/ai";
@@ -9,6 +8,7 @@ import LeftSide from "./leftSide";
 import Choices from "./choices";
 import { Popover, Rate } from "antd";
 import { colors, size, others } from "../../../data/choices";
+import RightSIde from "./rightside";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
@@ -23,7 +23,7 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className=" py-5 p-1 overflow-y-hidden flex-col md:flex-row gap-6 flex justify-center">
+    <div className=" py-5 p-1 flex-wrap overflow-y-hidden flex-col md:flex-row gap-6 flex justify-center">
       <LeftSide />
       <div className="w-[28rem] flex flex-col gap-5 px-2">
         <div className=" flex flex-col  gap-3 ">
@@ -33,7 +33,7 @@ export default function ProductDetail() {
                 <div className=" flex gap-3">
                   <div className="flex cursor-pointer items-center gap-1">
                     <FiShare2 className=" font-bold text-xl text-[#FF5722]" />
-                    <p className=" text-sm">Share</p>
+                    <p className=" font-light text-sm">Share</p>
                   </div>
                   <Popover
                     content={<Rate onChange={hide} value={4} />}
@@ -51,14 +51,14 @@ export default function ProductDetail() {
             </div>
             <div className="flex flex-col">
               <div className="flex items-center justify-between">
-                <h4 className="font-bold text-3xl">Jordan 4</h4>
+                <h4 className="font-semibold text-3xl">Jordan 4</h4>
               </div>
               <div className=" cursor-pointer flex items-end gap-2">
                 <AiOutlineShop className=" text-[#FF5722]" />
                 <p className="text-sm text-gray-600 font-ligth">by Soes shop</p>
               </div>
             </div>
-            <p className=" font-light w-5/6 ">
+            <p className=" font-light w-11/12">
               With plenty of talk and listen time, voice-activated Siri access,
               and an available wireless charging case.
             </p>
@@ -66,12 +66,12 @@ export default function ProductDetail() {
         </div>
         <div className="flex flex-col gap-2 justify-between">
           <div className="flex items-center gap-3 ">
-            <h3 className=" text-2xl font-light">$45,6</h3>{" "}
+            <h3 className=" text-2xl">$45,6 - 30.12$</h3>
           </div>
         </div>
         <Choices colors={colors} sizes={size} others={others} />
         <div className="flex flex-col gap-2">
-          <p>Quantity</p>
+          <p className="font-light">Quantity </p>
           <div className="flex rounded items-center w-[10.5rem]">
             <span
               onClick={() => {
@@ -107,6 +107,7 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
+      <RightSIde />
     </div>
   );
 }
