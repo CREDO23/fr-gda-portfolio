@@ -16,13 +16,13 @@ export default function Choices({ colors, sizes, others }: IChoicesProps) {
         return newItem;
       })
     );
-  }, []);
+  }, [others]);
 
   return (
     <div className=" flex flex-col gap-3">
       {colors && (
         <div className="flex flex-col gap-2">
-          <p className="font-light">Colors:</p>
+          <p className="font-light  opacity-70 text-sm">Colors:</p>
           <div className="flex gap-1 ">
             {colors?.items?.map((col, key) => (
               <div
@@ -45,7 +45,7 @@ export default function Choices({ colors, sizes, others }: IChoicesProps) {
       )}
       {sizes && (
         <div className="flex flex-col gap-2">
-          <p className="font-light">Size:</p>
+          <p className="font-light  opacity-70 text-sm">Size:</p>
           <div className="flex gap-1 flex-wrap ">
             {sizes.items.map((siz, key) => (
               <div
@@ -71,7 +71,7 @@ export default function Choices({ colors, sizes, others }: IChoicesProps) {
           if (defaultvalue)
             return (
               <div key={key} className="flex w-[45%] flex-col gap-2">
-                <p className="font-light  opacity-60 text-sm">{ch.label}:</p>
+                <p className="font-light  opacity-70 text-sm">{ch.label}:</p>
                 <Select
                   bordered={false}
                   onChange={(e) => {

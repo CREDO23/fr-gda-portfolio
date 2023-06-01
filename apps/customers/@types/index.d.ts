@@ -17,3 +17,8 @@ interface IChoicesProps {
     items: any;
   }[];
 }
+
+interface DiscountData {
+  disCase: string;
+  price: number;
+}
