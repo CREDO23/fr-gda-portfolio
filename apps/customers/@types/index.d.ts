@@ -1,5 +1,11 @@
 declare global {}
 
+interface IChoice {
+  key: number;
+  label: string;
+  items: any;
+}
+
 interface IChoicesProps {
   colors?: {
     label: string;
@@ -11,14 +17,16 @@ interface IChoicesProps {
     items: string[];
   } | null;
 
-  others?: {
-    key: number;
-    label: string;
-    items: any;
-  }[];
+  others?: IChoice[];
 }
 
 interface DiscountData {
   disCase: string;
   price: number;
+}
+
+interface IRaterData {
+  data: { [id: string]: { value: number; color: string } };
+  total: number;
+  average: number;
 }

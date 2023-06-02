@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-  .d-height {
-    height: 100lvh;
-  }
-
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -15,4 +11,9 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+.dot-style {
+  list-style: disc;
+  list-style-type: disc;
 }

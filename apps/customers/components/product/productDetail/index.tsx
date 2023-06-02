@@ -4,27 +4,26 @@ import { AiOutlineShop } from "react-icons/ai";
 import { useState } from "react";
 import Button from "@smarket/design/button";
 import { HiOutlineShoppingCart } from "react-icons/hi";
-import LeftSide from "./leftSide";
-import Choices from "./choices";
+import Gallery from "./Gallery";
+import Choices from "./Choices";
 import { Popover, Rate } from "antd";
 import { colors, size, others } from "../../../data/choices";
-import RightSIde from "./rightside";
+import PurchaseInfo from "./PurchaseInfo";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
+  const [rate, setRate] = useState(0);
 
-  const hide = () => {
-    setOpen(false);
-  };
-
-  const handleOpenChange = (newOpen: boolean) => {
+  const handleOpenRate = (newOpen: boolean) => {
     setOpen(newOpen);
   };
 
+  const desc = ["terrible", "bad", "normal", "good", "wonderful"];
+
   return (
     <div className=" py-5 p-1 flex-wrap overflow-y-hidden flex-col md:flex-row gap-6 flex justify-center">
-      <LeftSide />
+      <Gallery />
       <div className="w-[28rem] flex flex-col gap-5 px-2">
         <div className=" flex flex-col  gap-3 ">
           <div className="flex flex-col gap-4">
@@ -36,11 +35,22 @@ export default function ProductDetail() {
                     <p className=" font-light text-sm">Share</p>
                   </div>
                   <Popover
-                    content={<Rate onChange={hide} value={4} />}
+                    content={
+                      <span>
+                        <Rate tooltips={desc} onChange={setRate} value={rate} />
+                        {rate ? (
+                          <span className="ant-rate-text">
+                            {desc[rate - 1]}
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                      </span>
+                    }
                     trigger={["click", "focus", "hover"]}
                     open={open}
                     placement="leftBottom"
-                    onOpenChange={handleOpenChange}
+                    onOpenChange={handleOpenRate}
                   >
                     <div className="flex cursor-pointer items-center gap-1">
                       <MdOutlineFavoriteBorder className=" text-xl text-[#FF5722]" />
@@ -107,7 +117,7 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-      <RightSIde />
+      <PurchaseInfo />
     </div>
   );
 }
