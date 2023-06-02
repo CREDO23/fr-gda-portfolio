@@ -1,21 +1,25 @@
 import { Select } from "antd";
 import { useEffect, useState } from "react";
 
-export default function Choices({ colors, sizes, others }: IChoicesProps) {
+export default function ProductChoices({
+  colors,
+  sizes,
+  others,
+}: IChoicesProps) {
   const [color, setColor] = useState(colors?.items[0]);
   const [size, setSize] = useState(sizes?.items[0]);
   const [other, setOther] = useState([]);
 
+  const setDefaultValues = (choice: IChoice) => {
+    const newItem = {};
+    newItem["label"] = choice.label;
+    newItem["value"] = choice.items[0];
+    newItem["key"] = choice.key;
+    return newItem;
+  };
+
   useEffect(() => {
-    setOther(
-      others?.map((ch) => {
-        const newItem = {};
-        newItem["label"] = ch.label;
-        newItem["value"] = ch.items[0];
-        newItem["key"] = ch.key;
-        return newItem;
-      })
-    );
+    setOther(others?.map((ch) => setDefaultValues(ch)));
   }, [others]);
 
   return (
@@ -79,7 +83,6 @@ export default function Choices({ colors, sizes, others }: IChoicesProps) {
                       if (item.label === ch.label) {
                         item.value = e;
                       }
-
                       return item;
                     });
 
@@ -90,9 +93,7 @@ export default function Choices({ colors, sizes, others }: IChoicesProps) {
                   labelInValue={false}
                   options={ch?.items?.map((item) => {
                     const newItem = {};
-
                     newItem["value"] = item;
-
                     return newItem;
                   })}
                   className="w-full border rounded"

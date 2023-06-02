@@ -8,8 +8,10 @@ module.exports = WithMatTail({
     "../../packages/node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extends : {
-    }
+    colors: {
+      "d-orange": "#FF5722",
+    },
+    extends: {},
   },
   plugins: [],
 });

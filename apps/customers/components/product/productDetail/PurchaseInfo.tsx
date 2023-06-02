@@ -6,14 +6,14 @@ import visa from "../../../public/visaIcon.png";
 import mastercard from "../../../public/masterCard.png";
 import Image from "next/image";
 
-export default function RightSIde() {
+export default function PourchaseInfo() {
   const availability = true;
 
   const [discount, setDiscount] = useState(0);
 
   return (
     <div className="w-[28rem] p-3 gap-3 divide-y flex flex-col">
-      <p className=" font-medium text-lg">Product Info</p>
+      <p className=" font-medium text-2xl">Purchase Info</p>
       <div className="flex w-full pt-1 items-center gap-2">
         <p className="">Aailability - </p>{" "}
         <span
