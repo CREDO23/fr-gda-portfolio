@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { discountData } from "../../../data/discount";
 import { shipCosts } from "../../../data/shippingCost";
-import paypay from "../../../public/paypal.png";
-import visa from "../../../public/visaIcon.png";
-import mastercard from "../../../public/masterCard.png";
-import Image from "next/image";
+import { paymentMethods } from "../../../data/paymentsMethods";
 
 export default function PourchaseInfo() {
   const availability = true;
@@ -12,10 +9,10 @@ export default function PourchaseInfo() {
   const [discount, setDiscount] = useState(0);
 
   return (
-    <div className="w-[28rem] p-3 gap-3 divide-y flex flex-col">
+    <div className="w-full xxl:w-[28rem] p-3 gap-3 divide-y flex flex-col">
       <p className=" font-medium text-2xl">Purchase Info</p>
       <div className="flex w-full pt-1 items-center gap-2">
-        <p className="">Aailability - </p>{" "}
+        <p className="">Aailability - </p>
         <span
           className={` border ${
             availability
@@ -86,17 +83,13 @@ export default function PourchaseInfo() {
       </div>
       <div className="w-full pt-1 flex gap-1 flex-col">
         <p className="">Payments methods:</p>
-        {discountData && (
+        {paymentMethods && (
           <div className=" flex flex-wrap gap-3 ml-3">
-            <span className="h-6 border p-1 w-14">
-              <Image className="w-full h-full" alt="" src={visa} />
-            </span>
-            <span className="h-6 border p-1 w-14">
-              <Image className="w-full h-full" alt="" src={mastercard} />
-            </span>
-            <span className="h-6 border p-1 rounded-sm w-14">
-              <Image className="w-full h-full" alt="" src={paypay} />
-            </span>
+            {paymentMethods.map((method, key) => (
+              <span key={key} className="h-8 border p-1 w-16">
+                <img className="w-full h-full" alt="" src={method} />
+              </span>
+            ))}
           </div>
         )}
       </div>

@@ -9,6 +9,7 @@ import Choices from "./Choices";
 import { Popover, Rate } from "antd";
 import { colors, size, others } from "../../../data/choices";
 import PurchaseInfo from "./PurchaseInfo";
+import { galleryData } from "../../../data/gallery";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
@@ -19,12 +20,14 @@ export default function ProductDetail() {
     setOpen(newOpen);
   };
 
-  const desc = ["terrible", "bad", "normal", "good", "wonderful"];
-
   return (
-    <div className=" py-5 p-1 flex-wrap overflow-y-hidden flex-col md:flex-row gap-6 flex justify-center">
-      <Gallery />
-      <div className="w-[28rem] flex flex-col gap-5 px-2">
+    <div className=" md:px-5 py-5 flex-wrap overflow-y-hidden flex-col md:flex-row gap-6 flex justify-center">
+      <Gallery
+        gallery={galleryData?.gallery}
+        productUrl={galleryData?.productUrl}
+        rateData={galleryData?.rateData}
+      />
+      <div className="w-[28rem] flex flex-col gap-5 px-3">
         <div className=" flex flex-col  gap-3 ">
           <div className="flex flex-col gap-4">
             <div className="flex self-end items-center gap-8">
@@ -37,14 +40,7 @@ export default function ProductDetail() {
                   <Popover
                     content={
                       <span>
-                        <Rate tooltips={desc} onChange={setRate} value={rate} />
-                        {rate ? (
-                          <span className="ant-rate-text">
-                            {desc[rate - 1]}
-                          </span>
-                        ) : (
-                          ""
-                        )}
+                        <Rate onChange={setRate} value={rate} />
                       </span>
                     }
                     trigger={["click", "focus", "hover"]}

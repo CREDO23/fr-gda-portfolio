@@ -30,3 +30,28 @@ interface IRaterData {
   total: number;
   average: number;
 }
+
+type TPaymentMethodImgUrl = string;
+
+interface IDescription {
+  key?: string;
+  value: string;
+}
+
+interface IReviewCardProps {
+  avatarUrl: string;
+  name: string;
+  job?: string;
+  review: string;
+  rate: number;
+}
+
+interface IGalleryProps {
+  productUrl: string;
+  gallery: string[];
+  rateData: IRaterData;
+}
+
+interface IPurchaseInfoProps {
+  purchaseInfo: {};
+}
