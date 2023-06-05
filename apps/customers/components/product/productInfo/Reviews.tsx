@@ -2,11 +2,12 @@ import { Modal, Rate, Select } from "antd";
 import { BiPencil } from "react-icons/bi";
 import ReviewCard from "./ReviewCard";
 import { useState } from "react";
-import { BsEmojiSmile } from "react-icons/bs";
-import { HiOutlinePaperAirplane } from "react-icons/hi";
+import Button from "@smarket/design/button";
+import { reviewsData } from "../../../data/reviews";
 
 export default function Reviews() {
   const [open, setOpen] = useState(false);
+  const [rate, setRate] = useState(0);
 
   return (
     <div className="w-full flex flex-col gap-5 items-center  justify-center  ">
@@ -35,13 +36,15 @@ export default function Reviews() {
           onCancel={() => setOpen(false)}
           width={360}
           footer={[
-            <div className=" h-12 py-1  flex items-center justify-center gap-2 w-full"></div>,
+            <div className=" h-12 py-1  flex items-center justify-center gap-2 w-full">
+              <Button block type="primary" title="SEND" />
+            </div>,
           ]}
         >
           <div className="flex flex-col gap-3">
             <div className="flex flex-col">
               <span>Your rate</span>
-              <Rate value={4} />
+              <Rate onChange={setRate} value={rate} />
             </div>
             <div>
               <label
@@ -59,20 +62,29 @@ export default function Reviews() {
             </div>
           </div>
         </Modal>
-        <div
-          onClick={() => setOpen(true)}
-          className="flex px-4 border transition-all    hover:text-deep-orange-400 items-center justify-center rounded-md py-2"
-        >
-          <div className="flex cursor-pointer  items-center justify-center gap-3">
-            <BiPencil />
-            <p className=" font-light">Add your review</p>
-          </div>
-        </div>
       </div>
-      <div className="w-full gap-5 flex-wrap flex">
-        {[...new Array(4)].map((item, key) => (
-          <ReviewCard key={key} />
-        ))}
+      {reviewsData && (
+        <div className="w-full gap-5 flex-wrap flex">
+          {reviewsData.map((review, key) => (
+            <ReviewCard
+              job={review.job}
+              rate={review.rate}
+              name={review.name}
+              review={review.review}
+              avatarUrl={review.avatarUrl}
+              key={key}
+            />
+          ))}
+        </div>
+      )}
+      <div
+        onClick={() => setOpen(true)}
+        className="flex px-4 border border-deep-orange-400 transition-all hover:bg-deep-orange-400 hover:text-white text-deep-orange-400 items-center justify-center rounded-md py-2"
+      >
+        <div className="flex cursor-pointer  items-center justify-center gap-3">
+          <BiPencil />
+          <p className=" font-light">Add your review</p>
+        </div>
       </div>
     </div>
   );

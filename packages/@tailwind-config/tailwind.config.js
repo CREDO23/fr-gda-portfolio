@@ -12,6 +12,9 @@ module.exports = WithMatTail({
       "d-orange": "#FF5722",
     },
     extends: {},
+    screens: {
+      xxl: "1399px",
+    },
   },
   plugins: [],
 });

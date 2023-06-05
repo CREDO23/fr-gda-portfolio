@@ -2,25 +2,32 @@ import Image from "next/image";
 import shoe from "../../../public/shoe.png";
 import { CiStar } from "react-icons/ci";
 import { Rate } from "antd";
-import { rateData } from "../../../data/rate";
 
-export default function ProductGalery() {
+export default function ProductGalery({
+  productUrl,
+  gallery,
+  rateData,
+}: IGalleryProps) {
   return (
     <div className="w-[28rem] gap-1 flex flex-col items-center">
       <div className="w-full rounded-2xl overflow-hidden gap-1 flex flex-col items-center">
         <div className="w-full overflow-hidden bg-gray-100 h-96">
-          <Image className="h-full" src={shoe} alt="" />
+          <img height={96} className="h-full" src={productUrl} alt="" />
         </div>
-        <div className="flex no-scrollbar gap-1 overflow-x-auto">
-          {[...new Array(10)].map((el, key) => (
-            <Image
-              key={key}
-              className="border h-24 w-24 bg-gray-100 rounded gap-0.5 "
-              src={shoe}
-              alt=""
-            />
-          ))}
-        </div>
+        {gallery && (
+          <div className="flex no-scrollbar gap-1 overflow-x-auto">
+            {gallery.map((url, key) => (
+              <img
+                key={key}
+                className="border h-24 w-24 bg-gray-100 rounded gap-0.5 "
+                src={url}
+                alt=""
+                height={96}
+                width={96}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="w-full h-52  gap-5 flex items-center justify-center">
         <div className="flex items-center justify-center flex-col gap-1">
