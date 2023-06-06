@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { discountData } from "../../../data/discount";
-import { shipCosts } from "../../../data/shippingCost";
-import { paymentMethods } from "../../../data/paymentsMethods";
 
-export default function PourchaseInfo() {
-  const availability = true;
-
+export default function PourchaseInfo({
+  discountData,
+  paymentMethods,
+  shipCosts,
+  othersInfo,
+}: IPurchaseInfoProps) {
   const [discount, setDiscount] = useState(0);
 
   return (
@@ -15,17 +15,17 @@ export default function PourchaseInfo() {
         <p className="">Aailability - </p>
         <span
           className={` border ${
-            availability
+            othersInfo?.availability
               ? " bg-green-100 text-green-600"
               : " bg-red-50 text-red-500"
           } font-light text-xs rounded-lg px-2`}
         >
-          {availability ? "In stock" : "Out of stock"}
+          {othersInfo?.availability ? "In stock" : "Out of stock"}
         </span>
       </div>
       <div className="flex pt-1 w-full items-center gap-2">
-        <p className="">Min order: </p>{" "}
-        <span className=" font-light text-sm">10</span>
+        <p className="">Min order: </p>
+        <span className=" font-light text-sm">{othersInfo?.minOrder}</span>
       </div>
       <div className="w-full pt-1 flex gap-1 flex-col">
         <p className="">Discount info:</p>
@@ -50,12 +50,12 @@ export default function PourchaseInfo() {
         <p className="">Shipping info:</p>
         <ul className="ml-3 gap-[6px]  flex flex-col">
           <li className="flex text-sm w-full items-center gap-2">
-            <p className=" opacity-60">Zones: </p>{" "}
-            <span className=" font-light ">Everywhere in DRC</span>
+            <p className=" opacity-60">Zones: </p>
+            <span className=" font-light ">{othersInfo?.deliveryZone}</span>
           </li>
           <li className="flex text-sm w-full items-center gap-2">
             <p className=" opacity-60">Delivery time &#128337;: </p>{" "}
-            <span className=" font-light ">2 days</span>
+            <span className=" font-light ">{othersInfo?.deliveryTime}</span>
           </li>
           <li className="flex flex-col text-sm w-full gap-2">
             <p className=" opacity-60">Rates and costs: </p>
@@ -77,7 +77,7 @@ export default function PourchaseInfo() {
           </li>
           <li className="flex text-sm w-full items-center gap-2">
             <p className=" opacity-60">Refund & Returns: </p>
-            <span className=" font-light ">Eligible</span>
+            <span className=" font-light ">{othersInfo?.refunds}</span>
           </li>
         </ul>
       </div>

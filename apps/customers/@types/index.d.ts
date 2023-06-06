@@ -6,6 +6,11 @@ interface IChoice {
   items: any;
 }
 
+interface IShipCost {
+  shipCostCase: string;
+  price: string;
+}
+
 interface IChoicesProps {
   colors?: {
     label: string;
@@ -20,7 +25,7 @@ interface IChoicesProps {
   others?: IChoice[];
 }
 
-interface DiscountData {
+interface IDiscountData {
   disCase: string;
   price: number;
 }
@@ -53,5 +58,27 @@ interface IGalleryProps {
 }
 
 interface IPurchaseInfoProps {
-  purchaseInfo: {};
+  shipCosts: IShipCost[];
+  paymentMethods: TPaymentMethodImgUrl[];
+  discountData: IDiscountData[];
+  othersInfo: {
+    deliveryTime: string;
+    deliveryZone: string | string[];
+    refunds: "Eligible" | "Not Eligible";
+    availability: boolean;
+    minOrder: number;
+  };
+}
+
+interface IDescription {
+  key?: string;
+  value: string;
+}
+
+interface IDescriptionProps {
+  descriptions: IDescription[];
+}
+
+interface IReviewsProps {
+  reviews: IReviewCardProps[];
 }

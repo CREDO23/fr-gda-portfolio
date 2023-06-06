@@ -10,6 +10,9 @@ import { Popover, Rate } from "antd";
 import { colors, size, others } from "../../../data/choices";
 import PurchaseInfo from "./PurchaseInfo";
 import { galleryData } from "../../../data/gallery";
+import { shipCosts } from "../../../data/shippingCost";
+import { paymentMethods } from "../../../data/paymentsMethods";
+import { discountData } from "../../../data/discount";
 
 export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
@@ -113,7 +116,18 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-      <PurchaseInfo />
+      <PurchaseInfo
+        othersInfo={{
+          minOrder: 20,
+          deliveryTime: "3 weeks",
+          deliveryZone: "Kinshasa",
+          refunds: "Not Eligible",
+          availability: true,
+        }}
+        paymentMethods={paymentMethods}
+        shipCosts={shipCosts}
+        discountData={discountData}
+      />
     </div>
   );
 }

@@ -2,14 +2,14 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Typography
+  Typography,
 } from "@material-tailwind/react";
 import { CiShop } from "react-icons/ci";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 
-export default function SimilarCard() {
+export default function RelatedCard() {
   return (
-    <Card className="w-64">
+    <Card className="w-64 inline-block">
       <CardHeader shadow={false} floated={false} className="h-52">
         <img
           src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
@@ -21,9 +21,7 @@ export default function SimilarCard() {
           <Typography className="font-medium text-black">
             Apple AirPods
           </Typography>
-          <Typography className="font-medium text-black">
-            $95.00
-          </Typography>
+          <Typography className="font-medium text-black">$95.00</Typography>
         </div>
         <div className="flex justify-between items-center gap-2">
           <div className=" cursor-pointer hover:underline flex gap-2">

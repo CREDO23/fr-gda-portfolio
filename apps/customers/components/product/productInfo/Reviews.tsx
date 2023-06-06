@@ -3,9 +3,8 @@ import { BiPencil } from "react-icons/bi";
 import ReviewCard from "./ReviewCard";
 import { useState } from "react";
 import Button from "@smarket/design/button";
-import { reviewsData } from "../../../data/reviews";
 
-export default function Reviews() {
+export default function Reviews({ reviews }: IReviewsProps) {
   const [open, setOpen] = useState(false);
   const [rate, setRate] = useState(0);
 
@@ -20,8 +19,8 @@ export default function Reviews() {
               defaultValue={[{ value: "Newest" }]}
               options={[
                 { value: "Newest" },
-                { value: "5 ratings" },
-                { value: "4 Ratingd" },
+                { value: "5 rate" },
+                { value: "4 rate" },
               ]}
               bordered={false}
               className="w-full border rounded"
@@ -63,9 +62,9 @@ export default function Reviews() {
           </div>
         </Modal>
       </div>
-      {reviewsData && (
+      {reviews && (
         <div className="w-full gap-5 flex-wrap flex">
-          {reviewsData.map((review, key) => (
+          {reviews.map((review, key) => (
             <ReviewCard
               job={review.job}
               rate={review.rate}

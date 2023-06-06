@@ -1,6 +1,6 @@
 export const galleryData: IGalleryProps = {
   productUrl:
-    "https://cdn.shopify.com/s/files/1/2358/2817/products/Air-Jordan-4-Canyon-Purple-1_218c24fc-95fb-495a-b3e1-efbc1d2fcd97_medium.png?v=1659947927",
+    "https://cdn.shopify.com/s/files/1/2358/2817/products/air-jordan-4-tech-white-white-oreo-919389_medium.png?v=1639397418",
   gallery: [
     "https://cdn.shopify.com/s/files/1/2358/2817/files/air-jordan-4-seafoam-1_medium.png?v=1684772750",
     "https://cdn.shopify.com/s/files/1/2358/2817/products/Air-Jordan-4-Black-Canvas-1_medium.png?v=1659109342",
