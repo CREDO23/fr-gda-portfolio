@@ -1,5 +1,3 @@
-import Image from "next/image";
-import shoe from "../../../public/shoe.png";
 import { CiStar } from "react-icons/ci";
 import { Rate } from "antd";
 

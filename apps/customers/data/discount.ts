@@ -1,4 +1,4 @@
-export const discountData: DiscountData[] = [
+export const discountData: IDiscountData[] = [
   {
     disCase: ">= 5000",
     price: 12.5,

@@ -1,4 +1,4 @@
-export const shipCosts = [
+export const shipCosts: IShipCost[] = [
   {
     shipCostCase: "<10kg",
     price: "free",

@@ -37,9 +37,9 @@ export default function ReviewCard({
       </CardHeader>
       <CardBody className="mb-6 p-0">
         <Typography>
-          {'"'}
+          {"❝ "}
           {review}
-          {'"'}
+          {" ❞"}
         </Typography>
       </CardBody>
     </Card>
