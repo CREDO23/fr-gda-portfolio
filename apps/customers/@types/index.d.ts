@@ -1,5 +1,10 @@
 declare global {}
 
+interface IhamburgerProps {
+  setHamburger?: Dispatch<SetStateAction<boolean>>;
+  hamburger: boolean;
+}
+
 interface IChoice {
   key: number;
   label: string;
