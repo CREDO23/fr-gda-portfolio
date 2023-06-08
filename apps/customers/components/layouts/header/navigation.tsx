@@ -22,14 +22,6 @@ export default function Navigation({
       label: "Contact",
       link: "#",
     },
-    {
-      label: "Pricing",
-      link: "#",
-    },
-    {
-      label: "Contact",
-      link: "#",
-    },
   ];
 
   const [selected, setSelected] = useState(0);

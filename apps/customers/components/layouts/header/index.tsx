@@ -7,6 +7,7 @@ import { BiUserCircle } from "react-icons/bi";
 import { Avatar, Badge } from "antd";
 import Hamburger from "./hamburger";
 import { useState } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 export default function Header() {
   const isLoged = true;
@@ -17,7 +18,7 @@ export default function Header() {
       {hamburger && (
         <div className=" md:hidden absolute w-screen h-screen backdrop-blur-md bg-white/30 z-10"></div>
       )}
-      <div className={`w-full sticky top-0 z-20 bg-gray-50 md:h-16 `}>
+      <div className={`w-full sticky top-0 z-20 bg-white md:h-16 `}>
         <div className=" bg-white flex items-center px-4 w-full backdrop-blur-md md:hidden h-14">
           <p className=" font-semibold text-xl">LOGO</p>
           <Hamburger hamburger={hamburger} setHamburger={setHamburger} />
@@ -46,11 +47,13 @@ export default function Header() {
                   <MdOutlineNotificationsNone className="transition-all text-xl" />
                 </Badge>
               </div>
-              <div className=" hover:text-deep-orange-400 cursor-pointer">
+              <div className=" flex items-center justify-center gap-1 cursor-pointer">
                 <Avatar
                   className="flex items-center justify-center"
                   icon={<BiUserCircle />}
                 />
+                <p className=" text-xs font-light">Thierry</p>
+                <IoMdArrowDropdown className=" text-sm" />
               </div>
             </div>
           ) : (
