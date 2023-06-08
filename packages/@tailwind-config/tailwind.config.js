@@ -1,6 +1,6 @@
 import WithMatTail from "@material-tailwind/react/utils/withMT";
 
-module.exports = WithMatTail({
+export default WithMatTail({
   content: [
     "../../apps/**/*.{tsx,jsx}",
     "../../packages/**/*.{tsx,jsx}",

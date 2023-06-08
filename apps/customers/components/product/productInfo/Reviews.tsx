@@ -34,11 +34,11 @@ export default function Reviews({ reviews }: IReviewsProps) {
           onOk={() => setOpen(false)}
           onCancel={() => setOpen(false)}
           width={360}
-          footer={[
+          footer={
             <div className=" h-12 py-1  flex items-center justify-center gap-2 w-full">
               <Button block type="primary" title="SEND" />
-            </div>,
-          ]}
+            </div>
+          }
         >
           <div className="flex flex-col gap-3">
             <div className="flex flex-col">
@@ -62,16 +62,17 @@ export default function Reviews({ reviews }: IReviewsProps) {
           </div>
         </Modal>
       </div>
+
       {reviews && (
         <div className="w-full gap-5 flex-wrap flex">
           {reviews.map((review, key) => (
             <ReviewCard
+              key={key}
               job={review.job}
               rate={review.rate}
               name={review.name}
               review={review.review}
               avatarUrl={review.avatarUrl}
-              key={key}
             />
           ))}
         </div>
