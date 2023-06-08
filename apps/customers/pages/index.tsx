@@ -1,4 +1,3 @@
-import ProductFilter from "../components/home/ProductFilter";
 import Hero from "../components/home/hero";
 import Layout from "../components/layouts";
 
