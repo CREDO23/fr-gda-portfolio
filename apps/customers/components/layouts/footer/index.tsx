@@ -1,9 +1,8 @@
-import Button from "../button";
-import Input from "../input";
+import Button from "@smarket/design/button";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900">
+    <footer className="bg-gray-100  dark:bg-gray-900">
       <hr className=" border-gray-200 md:my-8 dark:border-gray-700" />
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
