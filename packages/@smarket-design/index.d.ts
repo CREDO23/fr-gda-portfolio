@@ -19,7 +19,7 @@ export interface InputProps {
   placeholder?: string;
   label?: string;
   value?: string;
-  onChange: (e: any) => void;
+  onChange?: (e: any) => void;
   onPressEnter?: (e: any) => void;
   addonAfter?: ReactNode;
   addonBefore?: ReactNode;

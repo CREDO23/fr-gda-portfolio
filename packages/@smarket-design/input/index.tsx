@@ -33,7 +33,7 @@ export default function Input(props: InputProps): JSX.Element {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#F9A21D",
+          colorPrimary: "#ff5722",
           colorError: "#FE4D4F",
         },
       }}
