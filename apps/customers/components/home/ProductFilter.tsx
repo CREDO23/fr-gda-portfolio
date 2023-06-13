@@ -1,4 +1,3 @@
-import { FaFilter } from "react-icons/fa";
 import { Checkbox, Slider } from "antd";
 
 export default function ProductFilter() {
@@ -20,12 +19,11 @@ export default function ProductFilter() {
   };
 
   return (
-    <div className="w-72 border flex flex-col  gap-3 rounded-lg">
-      <div className="w-full border-b p-4 pb-3 justify-between   flex items-center">
+    <div className="w-full flex flex-col  gap-3 rounded-lg">
+      <div className="w-full  p-4 pb-3 justify-between   flex items-center">
         <p className=" text-sm font-bold">Filters</p>
-        <FaFilter />
       </div>
-      <div className=" w-full px-3 flex flex-col items-center gap-2">
+      <div className=" w-full border rounded-md p-3 flex flex-col items-center gap-2">
         <div className=" border-b border-gray-100 w-full flex flex-col items-center gap-2">
           <p className=" text-sm w-full text-left">Price range ($)</p>
           <div className="w-full">

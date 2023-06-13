@@ -3,7 +3,7 @@ import hero from "../../public/hero-img.png";
 
 export default function Hero() {
   return (
-    <div className="w-full pt-10 md:pt-4  md:justify-between flex-col md:flex-row flex items-center bg-opacity-40 bg-gradient-to-b from-white via-deep-orange-50 to-white  h-[calc(100%-27rem)] md:h-[27rem]">
+    <div className="w-full pt-10 md:pt-4  md:justify-between flex-col md:flex-row flex items-center bg-opacity-40 bg-gradient-to-b from-white via-deep-orange-50 to-white  h-[calc(100%-27rem)] md:h-[27rem] lg:h-[32rem] lg:px-20">
       <div className=" w-full md:w-7/12 h-full flex items-center justify-center md:order-last  ">
         <div className=" ">
           <Image alt="hero-img" src={hero} />
