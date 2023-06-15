@@ -11,7 +11,7 @@ export default function ProductChoices({
   const [other, setOther] = useState([]);
 
   const setDefaultValues = (choice: IChoice) => {
-    const newItem = {};
+    const newItem = { label: "", value: "", key: 0 };
     newItem["label"] = choice.label;
     newItem["value"] = choice.items[0];
     newItem["key"] = choice.key;
@@ -91,8 +91,8 @@ export default function ProductChoices({
                   defaultValue={{ value: defaultvalue }}
                   placeholder={`Select a ${ch.label}`}
                   labelInValue={false}
-                  options={ch?.items?.map((item) => {
-                    const newItem = {};
+                  options={ch?.items?.map((item: IChoice) => {
+                    const newItem: { value: any } = { value: "" };
                     newItem["value"] = item;
                     return newItem;
                   })}
