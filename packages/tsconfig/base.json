@@ -4,6 +4,7 @@
   "compilerOptions": {
     "composite": false,
     "declaration": true,
+    "jsx": "preserve",
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

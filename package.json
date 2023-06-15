@@ -3,6 +3,10 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:auth": "turbo run dev --filter auth",
+    "dev:customers": "turbo run dev --filter customers",
+    "build:auth": "turbo run build --filter auth",
+    "build:customers": "turbo run build --filter customers",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"

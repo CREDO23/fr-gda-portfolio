@@ -1,7 +1,7 @@
 import { Checkbox, Slider } from "antd";
 
 export default function ProductFilter() {
-  const slideFormater = (value) => `${value}$`;
+  const slideFormater = (value: number) => `${value}$`;
 
   const SliderMarks = {
     0: {
