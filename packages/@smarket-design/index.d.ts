@@ -1,6 +1,34 @@
 import { ReactNode, Ref } from "react";
 
-export interface BtnProps {
+type TMTcolor =
+  | "white"
+  | "blue-gray"
+  | "gray"
+  | "brown"
+  | "deep-orange"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "light-green"
+  | "green"
+  | "teal"
+  | "cyan"
+  | "light-blue"
+  | "blue"
+  | "indigo"
+  | "deep-purple"
+  | "purple"
+  | "pink"
+  | "red";
+
+/**
+ * ----------------------------------------------------------------
+ * BUTTONS TYPES
+ * ----------------------------------------------------------------
+ */
+
+interface BtnProps {
   disabled?: boolean;
   block?: boolean;
   danger?: boolean;
@@ -15,7 +43,23 @@ export interface BtnProps {
   size?: "large" | "small" | "middle";
 }
 
-export interface InputProps {
+interface MTButtonProps {
+  variant?: "filled" | "outlined" | "gradient" | "text";
+  size?: "sm" | "md" | "lg";
+  color?: TMTcolor;
+  fullWidth?: boolean;
+  ripple?: boolean;
+  className?: string;
+  children: ReactNode;
+}
+
+/**
+ * ----------------------------------------------------------------
+ * INPUTS TYPES
+ * ----------------------------------------------------------------
+ */
+
+interface InputProps {
   placeholder?: string;
   label?: string;
   value?: string;
@@ -50,4 +94,16 @@ export interface InputProps {
     | "numeric"
     | "decimal"
     | undefined;
+}
+
+interface MTInputProps {
+  variant?: "standard" | "outlined" | "static";
+  size?: "md" | "lg";
+  color?: TMTcolor;
+  label: string;
+  error?: boolean;
+  success?: boolean;
+  icon?: ReactNode;
+  className?: string;
+  type?: "password" | "email" | "";
 }
